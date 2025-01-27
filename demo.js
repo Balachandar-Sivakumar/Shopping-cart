@@ -10,7 +10,7 @@ let grtext = document.getElementById('grname'),
 let count = 0;
 
 btn.addEventListener('click', () => {
-    let name = grtext.value.trim(),
+    let name = grtext.value,
           amount = Number(gramount.value);
     
     if (!name || isNaN(amount) || !amount) return alert('Enter correct value');
@@ -18,18 +18,18 @@ btn.addEventListener('click', () => {
     let li = document.createElement('li'),
           a = document.createElement('p'),
           b = document.createElement('p'),
-          c = document.createElement('i'),
-          e = document.createElement('span')
+          c = document.createElement('i');
+        
 
     a.className = 'cont';
     a.textContent = name;
     b.className = 'ttl';
     b.textContent = amount;
     c.className = 'icon fa-solid fa-trash';
-    e.className= 'spn';
     
-    e.append(a,b)
-    li.append(e, c);
+    
+    
+    li.append(a,b, c);
     ultag.appendChild(li);
     
     count += amount;
