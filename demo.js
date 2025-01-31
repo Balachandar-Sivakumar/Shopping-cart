@@ -9,7 +9,9 @@ let grtext = document.getElementById('grname'),
     desc = document.querySelector('.desc');
 let count = 0;
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click',start)
+
+function start(){
     let name = grtext.value,
           amount = Number(gramount.value);
     
@@ -42,7 +44,7 @@ btn.addEventListener('click', () => {
     });
 
     grtext.value = gramount.value = '';
-});
+}
 
 function sort(n) {
     let items = Array.from(ultag.children);
@@ -57,3 +59,5 @@ function sort(n) {
 
 asc.addEventListener('click', () => sort(true));
 desc.addEventListener('click', () => sort(false));
+grtext.addEventListener('keypress',(n)=> {return n.key==="Enter" ? start():0});
+gramount.addEventListener('keypress',(n)=> {return n.key==="Enter" ? start():0});
